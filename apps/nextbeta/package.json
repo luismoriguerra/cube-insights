@@ -24,8 +24,7 @@
     "tailwindcss": "3.3.2",
     "tsconfig": "*",
     "typescript": "5.0.4",
-    "ui": "*",
-    "database": "*"
+    "ui": "*"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

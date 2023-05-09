@@ -3,7 +3,7 @@
   "scripts": {
     "build:lib": "turbo run build:lib",
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --concurrency=12",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
