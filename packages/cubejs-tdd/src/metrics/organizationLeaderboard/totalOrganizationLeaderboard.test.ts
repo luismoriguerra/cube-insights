@@ -5,5 +5,5 @@ import { getTotalOrganizationLeaderboard } from "./totalOrganizationLeaderboard"
 
 test("get total organization leaderboard", async () => {
   const results = await getTotalOrganizationLeaderboard();
-  expect(results).toBe(1);
+  expect(results.orgsCurrent.length).toBeGreaterThan(0);
 });

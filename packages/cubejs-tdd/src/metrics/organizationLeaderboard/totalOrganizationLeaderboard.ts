@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 import { calculatePercentageChange, getPercentageOfRounded } from "../../utils";
 
 export async function getTotalOrganizationLeaderboard() {
-  const GET_SOME_DATA = gql`
+  const org_leaderboard_table = gql`
     query CubeQuery(
       $tenantIds: [String]!
       $dateRange: [String!]!
@@ -73,7 +73,7 @@ export async function getTotalOrganizationLeaderboard() {
   `;
 
   const { data } = await graphqlClient.query({
-    query: GET_SOME_DATA,
+    query: org_leaderboard_table,
     variables: {
       tenantIds: ["ccff5355-cf54-40a1-9a2e-8e4a447ae73a"],
       dateRange: ["2023-01-02", "2023-12-31"],
@@ -112,3 +112,22 @@ export async function getTotalOrganizationLeaderboard() {
 
   return response;
 }
+
+// > response {
+//   "data": {
+//     "totalCurrent": 538,
+//     "totalPrevious": 591,
+//     "totalDelta": -8.97,
+//     "orgsCurrent": [
+//       {
+//         "id": "1ee58b13-b959-411a-8af0-ce2b236bcf26",
+//         "name": "The Linux Foundation",
+//         "logo": "https://avatars.githubusercontent.com/u/1040002?v=4",
+//         "count": 478,
+//         "previousCount": 512,
+//         "percentage": 89
+//       },
+//        ...
+//     ]
+//   }
+// }
